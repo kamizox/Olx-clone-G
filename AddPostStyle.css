@@ -1,0 +1,238 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  width: 600px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+.category-box img {
+  width: 40px;
+  height: 40px;
+}
+
+.upload-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.upload-btn {
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  border: 2px dashed #aaa;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #f9f9f9;
+}
+
+.upload-placeholders {
+  display: flex;
+  gap: 10px;
+}
+
+.img-placeholder {
+  width: 50px;
+  height: 50px;
+  border: 2px dashed #ddd;
+  border-radius: 6px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background: #004d40;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: #004d40;
+}
+
+small {
+  color: #555;
+}
+
+
+
+
+
+/* ===== Price & Phone Input Boxes ===== */
+.price-input, .phone-input {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  width: 70%;         /* input box width control */
+  max-width: 500px;   /* max limit set */
+  margin-top: 5px;
+}
+
+.price-input span, .phone-input span {
+  background: #f2f2f2;
+  padding: 10px 15px;
+  border-right: 1px solid #ddd;
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+}
+
+.price-input input, .phone-input input {
+  border: none;
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.price-input input:focus,
+.phone-input input:focus {
+  outline: none;
+}
+
+/* ===== Name Input ===== */
+.section2 input[type="text"] {
+  width: 70%;
+  max-width: 500px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* ===== Toggle Switch ===== */
+.toggle-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  max-width: 500px;
+  margin: 15px 0;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+.switch input:checked + .slider {
+  background-color: #004d40;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* ===== Submit Button ===== */
+.post-btn {
+  width: 150px;
+  padding: 12px;
+  background: #004d40;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.post-btn:hover {
+  background: #00695c;
+}
+
+.section2 {
+  width: 50%;
+  max-width: 500px;
+  margin: 15px auto;  /* Center horizontally */
+}
+

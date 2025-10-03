@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup</title>
+    <link rel="stylesheet" href="loginStyle2.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left box -->
+        <div class="box-1">
+            <div class="content-holder">
+                <h2>Hello!</h2>
+                <button class="button-1" onclick="signup()">Sign up</button>
+                <button class="button-2" onclick="login()">Login</button>
+            </div>
+        </div>
+
+        <!-- Right box -->
+        <div class="box-2">
+            <!-- Login Form -->
+            <div class="login-form-container">
+                <h1>Login Form</h1>
+                <form onsubmit="userSignIn(event)">
+                    <input type="email" placeholder="Email" id="user-email" class="input-field" required>
+                    <br><br>
+                    <input type="password" placeholder="Password" id="user-password" class="input-field" required>
+                    <br><br>
+                    <button class="login-button"  type="submit">Login</button>
+                </form>
+            </div>
+
+            <!-- Signup Form -->
+            <div class="signup-form-container" style="display: none;">
+                <h1>Sign Up Form</h1>
+                <form onsubmit="userSignUp(event)">
+                    <input type="text" id="firstName" placeholder="First Name" class="input-field" required>
+                    <br><br>
+                    <input type="text" id="lastName" placeholder="Last Name" class="input-field" required>
+                    <br><br>
+                    <input type="email" id="email" placeholder="Email" class="input-field" required>
+                    <br><br>
+                    <input type="password" id="password" placeholder="Password" class="input-field" required>
+                    <br><br>
+                    <button class="signup-button" type="submit">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="login2.js"></script>
+</body>
+</html>

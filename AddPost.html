@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post Your Ad</title>
+  <link rel="stylesheet" href="AddPostStyle.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Post Your Ad</h2>
+
+    <!-- Category -->
+    <div class="section">
+      <div class="section-header">
+        <h3>Category</h3>
+        <a href="#">Change</a>
+      </div>
+      <div class="category-box">
+        <img src="headerBottomIcons/Mobile.png" alt="Mobile Icon">
+        <span>Mobiles <br><small>Mobile Phones</small></span>
+      </div>
+    </div>
+
+    <!-- Upload Images -->
+    <div class="section">
+      <h3>Upload Images</h3>
+      <div class="upload-box">
+        <button class="upload-btn">+</button>
+        <div class="upload-placeholders">
+          <div class="img-placeholder"></div>
+          <div class="img-placeholder"></div>
+          <div class="img-placeholder"></div>
+          <div class="img-placeholder"></div>
+          <div class="img-placeholder"></div>
+          <div class="img-placeholder"></div>
+        </div>
+      </div>
+      <small>For the cover picture we recommend using the landscape mode.</small>
+    </div>
+
+    <!-- Brand -->
+    <div class="section">
+      <label for="brand">Brand*</label>
+      <input type="text" id="brand" placeholder="Select brand">
+    </div>
+
+    <!-- Ad Title -->
+    <div class="section">
+      <label for="title">Ad Title*</label>
+      <input type="text" id="title" placeholder="Mention the key features of your item (brand, model, age, type)">
+    </div>
+
+    <!-- Description -->
+    <div class="section">
+      <label for="description">Description*</label>
+      <textarea id="description" placeholder="Describe the item you’re selling"></textarea>
+      <small>Include condition, features and reason for selling</small>
+    </div>
+
+    <!-- Location -->
+    <div class="section">
+      <label for="location">Location*</label>
+      <input type="text" id="location" placeholder="Select Location">
+    </div>
+
+    <!-- Submit -->
+    <div class="section">
+      <button class="submit-btn">Post Ad</button>
+    </div>
+  </div>
+
+  <!-- Price -->
+<div class="section2">
+  <label for="price">Price*</label>
+  <div class="price-input">
+    <span>Rs</span>
+    <input type="number" id="price" placeholder="Enter Price">
+  </div>
+</div>
+
+<!-- Name -->
+<div class="section2">
+  <label for="name">Name*</label>
+  <input type="text" id="name" value="Anna studio">
+</div>
+
+<!-- Mobile Phone -->
+<div class="section2">
+  <label for="phone">Mobile Phone Number*</label>
+  <div class="phone-input">
+    <span>+92</span>
+    <input type="tel" id="phone" placeholder="Enter phone number">
+  </div>
+</div>
+
+<!-- Toggle -->
+<div class="section2 toggle-box">
+  <label>Show my phone number in ads</label>
+  <label class="switch">
+    <input type="checkbox" checked>
+    <span class="slider"></span>
+  </label>
+</div>
+
+<!-- Submit -->
+<div class="section2">
+  <button class="post-btn">Post now</button>
+</div>
+
+</body>
+</html>

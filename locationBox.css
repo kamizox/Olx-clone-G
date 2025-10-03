@@ -1,0 +1,89 @@
+/* 1) container aur input ka basic layout */
+.locationBox {
+  position: relative;
+  width: 360px;   
+        /* zarurat ke mutabiq chhota/ bada kar lena */
+  font-family: Arial, sans-serif;
+}
+
+#locationInput {
+  width: 350px;  /* input field ki width */
+  padding: 10px 12px;
+  border: 1px solid #0d0d0e;
+  border-radius: 6px;
+  height: 45px;
+  box-sizing: border-box;
+  cursor: pointer;         /* readonly field, click se dropdown khulega */
+  background: #fff;
+  margin-left: 40px;
+ 
+}
+
+#locationInput2 {
+    width: 910px;  /* input field ki width */
+    padding: 10px 12px;
+    border: 1px solid #0d0d0e;
+    border-radius: 6px;
+    height: 45px;
+    box-sizing: border-box;
+    cursor: pointer;         /* readonly field, click se dropdown khulega */
+    background: #fff;
+    margin-left: 20px;
+    position: relative;   
+  }
+
+  #locationInput2 {
+    width:900px;  /* input field ki width */
+    padding: 10px 12px;
+    border: 1px solid #0d0d0e;
+    border-radius: 6px;
+    height: 45px;
+    box-sizing: border-box;
+    cursor: pointer;         /* readonly field, click se dropdown khulega */
+    background: #fff;
+    margin-left: 20px;
+    margin-right: 30px;
+  }
+
+/* 2) dropdown ko initially chhupaya hua rakhenge */
+#locationDropdown {
+  display: none;           /* JS se block/none toggle karenge */
+  position: absolute;
+  top: calc(100% + 8px);   /* input ke bilkul neeche */
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e6e9ee;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  border-radius: 6px;
+  z-index: 100;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+/* 3) list items styling */
+.location-item {
+  margin: 0;
+  padding: 10px 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.location-item:hover {
+  background: #f5f7fa;
+}
+
+/* small divider style (agar <hr> use kia to) */
+#locationDropdown hr {
+  margin: 6px 0;
+  border: none;
+  border-top: 1px solid #f0f1f3;
+}
+
+.header-bottom {
+border-bottom: 1px solid #ccc;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}

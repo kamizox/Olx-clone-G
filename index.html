@@ -1,66 +1,93 @@
-<!doctype html>
-<html lang="ur" dir="ltr">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>OLX Clone — Sample HTML & CSS</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="locationBox.css">
 </head>
 <body>
-<header class="container">
-<div class="topbar">
-<a class="brand" href="#">
-<div class="logo">OLX</div>
-<span>OLX — Sample</span>
-</a>
+   <header>
+    <div class="header-container">
+        <div class="header-icons">
+            <img id="olxIcon" src="./icons/olxIcon.png" alt="">
+            <img id="carIcon" src="./icons/car.png" alt="">
+            <h3>Motors</h3>
+            <img id="bikeIcon" src="./icons/search (1).png" alt="">
+            <h3>Property</h3>
+        </div>
 
+        <div class="header-middle">
+          <a href="login2.html">
+          <h2><U>Login</U></h2></a>
+            <img id="sellIcon" src="./icons/sellIcon.png" alt="">
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="locationBox">
+        <input type="text" placeholder="Pakistan" name="" readonly id="locationInput">
+        </div>
 
-<div class="search-row">
-<div class="search-box">
-<input type="text" placeholder="Kya dhoond rahe hain? (e.g. mobile, car, sofa)" />
-<select style="border:0;background:transparent;padding:6px 8px;margin-right:8px;outline:none">
-<option>Pure Pakistan</option>
-<option>Karachi</option>
-<option>Lahore</option>
-<option>Islamabad</option>
-</select>
-<button class="search-btn">Search</button>
-</div>
+         <div class="locationBox2">
+        <input type="text" placeholder="Find Cars, Mobile Phones and more..." name="" readonly id="locationInput2">
+        <span class="searchIcon"><img src="./icons/Pi7_search (3) (1).png" alt=""> <p>Search</p></span>
+    </div>
+    </div>
+   </header>
+   <div class="categoriesHeading">
+    <h2>Categories</h2>
+    <p>Mobile Phones</p>
+    <p>Cars</p>
+    <p>Motorcycles</p>
+    <p>Houses</p>
+    <p>Video-Audios</p>
+    <p>Tablets</p>
+    <p>Land & Plots</p>
+   </div>
+   <div class="mainImage">
+    <img src="icons/image.png" alt="">
+   </div>
 
-
-<div class="actions">
-<button class="btn">Log in</button>
-<button class="btn primary">Post Free Ad</button>
-</div>
-</div>
-</div>
-
-
-<!-- categories -->
-<nav class="categories">
-<a class="cat" href="#"><img src="https://via.placeholder.com/60?text=Mob" alt=""> <div><div class="label">Mobiles</div><div class="meta">Buy & sell</div></div></a>
-<a class="cat" href="#"><img src="https://via.placeholder.com/60?text=Car" alt=""> <div><div class="label">Cars</div><div class="meta">Used & new</div></div></a>
-<a class="cat" href="#"><img src="https://via.placeholder.com/60?text=Home" alt=""> <div><div class="label">Home</div><div class="meta">Furniture</div></div></a>
-<a class="cat" href="#"><img src="https://via.placeholder.com/60?text=Jobs" alt=""> <div><div class="label">Jobs</div><div class="meta">Hiring now</div></div></a>
-<a class="cat" href="#"><img src="https://via.placeholder.com/60?text=Elect" alt=""> <div><div class="label">Electronics</div><div class="meta">Gadgets</div></div></a>
-</nav>
-</header>
-
-
-<main class="container">
-<section style="margin-bottom:14px">
-<h2 style="margin:0 0 8px 0">Featured listings</h2>
-<p style="margin:0;color:var(--muted)">Recent ads from sellers near you</p>
+   <section class="categories">
+  <div class="cat-box">
+    <img src="./headerBottomIcons/Mobile.png" alt="Mobiles">
+    <p>Mobiles</p>
+  </div>
+  <div class="cat-box">
+    <img src="./headerBottomIcons/Vehicals.png" alt="Vehicles">
+    <p>Vehicles</p>
+  </div>
+  <div class="cat-box">
+    <img src="./headerBottomIcons/Property for sale.png" alt="Property Sale">
+    <p>Property For Sale</p>
+  </div>
+  <div class="cat-box">
+    <img src="./headerBottomIcons/Property for rent.png" alt="Property Rent">
+    <p>Property For Rent</p>
+  </div>
+  <div class="cat-box">
+    <img src="./headerBottomIcons/Electronic and home appliences.png" alt="Electronics">
+    <p>Electronics & Home</p>
+  </div>
+  <div class="cat-box">
+    <img src="./headerBottomIcons/Bikes.png" alt="Bikes">
+    <p>Bikes</p>
+  </div>
+  <div class="cat-box">
+    <img src="./headerBottomIcons/business.png" alt="Business">
+    <p>Business, Industrial &...</p>
+  </div>
+  <div class="cat-box">
+    <img src="./headerBottomIcons/services.png" alt="Services">
+    <p>Services</p>
+  </div>
+  <div class="cat-box">
+    <img src="./headerBottomIcons/jobs.png" alt="Jobs">
+    <p>Jobs</p>
+  </div>
 </section>
-
-
-<section class="grid">
-<!-- card 1 -->
-<article class="card">
-<img src="https://via.placeholder.com/600x400?text=Samsung+Phone" alt="Phone">
-<div class="card-body">
-<div class="title">Samsung Galaxy S21 — 128GB</div>
-<div class="price">PKR 85,000</div>
+<script src="script.js"></script>
+<script src="login2.js"></script>
+</body>
+</html>
