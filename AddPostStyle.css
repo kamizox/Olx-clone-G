@@ -236,3 +236,35 @@ small {
   margin: 15px auto;  /* Center horizontally */
 }
 
+
+
+
+
+/* Add this to your style.css or AddPostStyle.css (whichever applies to your product cards) */
+
+#product-card img {
+    width: 100%; /* Image takes full width of its container */
+    height: 150px; /* Fixed height for consistency */
+    object-fit: cover; /* This makes sure the image covers the area without distortion, cropping if necessary */
+    border-radius: 8px 8px 0 0; /* Match your card's border-radius if any */
+}
+
+/* Also, ensure your #product-card has a defined width */
+#product-card {
+    width: 250px; /* Or whatever width you want for each product card */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden; /* Important to clip content that overflows */
+    margin: 10px; /* Spacing between cards */
+    display: inline-block; /* Or flexbox/grid for layout */
+    vertical-align: top; /* To align cards if using inline-block */
+}
+
+/* Ensure product-listing-container uses flexbox or grid for proper layout */
+#product-listing-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Spacing between cards */
+    justify-content: flex-start; /* Align cards to the start */
+    padding: 20px;
+}

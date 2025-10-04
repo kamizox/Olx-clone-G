@@ -96,7 +96,8 @@ function updateHeaderAuthUI() {
     // 2. Get the elements we need to show/hide
     const loginTextElement = document.getElementById("loginText");
     const userIconElement = document.getElementById("userIcon");
-    const logoutIconElement = document.getElementById("logoutIcon"); // NEW
+    const logoutIconElement = document.getElementById("logoutIcon");
+    const searchIconElement = document.getElementsByClassName("searchIcon"); // NEW
 
     if (loggedInUser) {
         // If logged in: Hide Login Text, Show User Icon, Show Logout Icon
@@ -109,6 +110,11 @@ function updateHeaderAuthUI() {
         if (logoutIconElement) { // NEW: Show logout icon
             logoutIconElement.style.display = 'block';
         }
+        // if (searchIconElement) { // NEW: Show search icon
+        //     Array.from(searchIconElement).forEach(icon => {
+        //         icon.style.top = '99px';
+        //     });
+        // }
     } else {
         // If logged out (or not logged in): Show Login Text, Hide Icons
         if (loginTextElement) {
@@ -123,30 +129,107 @@ function updateHeaderAuthUI() {
     }
 }
 
-// 3. Define the Logout Function (NEW FUNCTION)
+
 function userLogout() {
-    // 1. Remove the logged-in user data
+   
     localStorage.removeItem("loggedInUser");
     
-    // 2. Update the UI immediately without reloading
+    
     updateHeaderAuthUI();
-
-    // OPTIONAL: Reload the page to ensure all components are reset
-    // window.location.reload(); 
-    // OR: Redirect to the home page if you want to clear the URL history
-    // window.location.href = "index.html"; 
     
     alert("Logged out successfully!");
 }
 
-
-// Run the UI update when the page finishes loading
 document.addEventListener('DOMContentLoaded', () => {
     updateHeaderAuthUI();
     
-    // Add event listener for the new logout function
+    
     const logoutBtn = document.getElementById("logoutIcon");
     if (logoutBtn) {
         logoutBtn.addEventListener('click', userLogout);
+    }
+});
+
+function getProducts() {
+    fetch("https://dummyjson.com/products")
+        .then((response) => response.json())
+        .then((result) => showProduct(result))
+        .catch(error => console.error('Error fetching products:', error)); 
+}
+
+
+
+
+
+function showProduct(result) {
+    const { products } = result;
+    let cardElementContainer = document.getElementById('product-listing-container'); 
+    
+    if (!cardElementContainer) return; 
+    
+    let productHTML = ''; 
+
+    products.forEach((element) => { 
+        const { thumbnail, price, title, description, id, brand } = element;
+        
+        productHTML += `
+        <a href='./product.html?id=${id}' target="_blank" style="text-decoration: none; color: inherit;">
+            <div id="product-card">
+                <div id="product-front">
+                    <div class="shadow"></div>
+                    <img src="${thumbnail}" alt="${title}" />
+                    <div class="image_overlay"></div>
+                    <div id="view_details">View details</div>
+                    <div class="stats">
+                        <div class="stats-container">
+                            <span class="product_price">$${price}</span>
+                            <span class="product_name">${title}</span>
+                            <p>${description.substring(0, 50)}...</p>
+
+                            <div class="product-options">
+                                <strong>Brand:</strong>
+                                <span>${brand}</span> 
+                                <strong>SIZE</strong>
+                                <span>S, M, L</span>
+                                <strong>COLORS</strong>
+                                <div class="colors">
+                                    <div class="c-blue"><span></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="product-back">
+                    <div class="shadow"></div>
+                    <div id="flip-back">
+                        <div id="cy"></div>
+                        <div id="cx"></div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        `;
+    });
+    
+    cardElementContainer.innerHTML = productHTML;
+}
+
+// =======================================================
+// PART C: INITIALIZATION (Run the functions when the page loads)
+// =======================================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Setup the login/logout UI
+    updateHeaderAuthUI();
+    
+    // 2. Attach the click handler for logout
+    const logoutBtn = document.getElementById("logoutIcon");
+    if (logoutBtn) {
+        // Prevent default navigation to login2.html and run our logout function
+        logoutBtn.parentElement.addEventListener('click', (e) => {
+             e.preventDefault(); // Stop the <a> tag from running
+             userLogout();
+        });
     }
 });

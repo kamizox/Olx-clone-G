@@ -6,6 +6,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="locationBox.css">
+      <link rel="stylesheet" href="AddPostStyle.css">
+
 </head>
 <body>
    <header>
@@ -26,7 +28,9 @@
     <img id="logoutIcon" style="display: none; cursor: pointer;" src="/icons/out.png" alt="Logout">
 </div>
           <h2 id="loginText"><U>Login</U></h2></a>
-            <img id="sellIcon"   src="./icons/sellIcon.png" alt="">
+            <a href="addpost.html" id="sellLink">
+                <img id="sellIcon" src="./icons/sellIcon.png" alt="Sell Button">
+             </a>
         </div>
     </div>
     <div class="header-bottom">
@@ -92,7 +96,22 @@
     <p>Jobs</p>
   </div>
 </section>
-<script src="script.js"></script>
+
+
+
+
+
+<div class="products-heading" style="padding-left: 40px; margin-top: 30px;">
+        <h2>Featured Products</h2>
+    </div>
+
+    <div id="product-listing-container" style="display: flex; flex-wrap: wrap; gap: 10px; padding: 20px 40px;">
+        </div>
+
+
+
+<script src="index.js"></script>
+<script src="addpost.js"></script>
 <script src="login2.js"></script>
 </body>
 </html>

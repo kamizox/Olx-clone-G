@@ -23,21 +23,28 @@
     </div>
 
     <!-- Upload Images -->
-    <div class="section">
-      <h3>Upload Images</h3>
-      <div class="upload-box">
-        <button class="upload-btn">+</button>
+  <div class="section">
+    <h3>Upload Images</h3>
+    <div class="upload-box">
+        <button class="upload-btn" data-input-target="image-upload-input">+</button>
+
+        <input type="file" 
+               id="image-upload-input" 
+               accept="image/*" 
+               multiple 
+               style="display: none;"> 
+               
         <div class="upload-placeholders">
-          <div class="img-placeholder"></div>
-          <div class="img-placeholder"></div>
-          <div class="img-placeholder"></div>
-          <div class="img-placeholder"></div>
-          <div class="img-placeholder"></div>
-          <div class="img-placeholder"></div>
-        </div>
-      </div>
-      <small>For the cover picture we recommend using the landscape mode.</small>
-    </div>
+            <div class="img-placeholder"></div>
+            <div class="img-placeholder"></div>
+            <div class="img-placeholder"></div>
+            <div class="img-placeholder"></div>
+            <div class="img-placeholder"></div>
+            <div class="img-placeholder"></div>
+            <div class="img-placeholder"></div> </div>
+        
+    </div> <small>For the cover picture we recommend using the landscape mode.</small>
+</div>
 
     <!-- Brand -->
     <div class="section">
@@ -108,5 +115,6 @@
   <button class="post-btn">Post now</button>
 </div>
 
+<script src="addpost.js"></script>
 </body>
 </html>
