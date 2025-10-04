@@ -79,6 +79,7 @@ function userSignIn(event) {
     window.location.href = "index.html"
     if (loggedInUser) {
         alert("login successful")
+document.getElementById("sellIcon").classList.add("userIconCls")
     } else {
         alert("invalid email or password")
     }   
