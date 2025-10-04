@@ -44,12 +44,27 @@ body {
     gap: 15px;
 }
 
+.userIconDiv {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 #userIcon {
     width: 40px;
     height: 40px;
 }
 .userIconCls{
   display: block;
+}
+
+#logoutIcon {
+    width: 40px;
+    height: 40px;
+}
+
+.loginTextCls{
+  display: none;
 }
 .mainImage  {
     width: 1300px;

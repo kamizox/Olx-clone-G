@@ -75,12 +75,78 @@ function userSignIn(event) {
     let userPassword = document.getElementById("user-password")
 
     let loggedInUser = users.find((element) => element.email === userEmail.value && element.password === userPassword.value)
-    localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser))
-    window.location.href = "index.html"
+
     if (loggedInUser) {
         alert("login successful")
-document.getElementById("sellIcon").classList.add("userIconCls")
+        localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser))
+        window.location.href = "index.html"   // login hone ke baad index pe bhej do
     } else {
         alert("invalid email or password")
-    }   
+    }
 }
+
+// In script.js (This file is linked to index.html)
+
+// In script.js (linked to index.html)
+
+function updateHeaderAuthUI() {
+    // 1. Get the data saved by login2.js
+    const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+    
+    // 2. Get the elements we need to show/hide
+    const loginTextElement = document.getElementById("loginText");
+    const userIconElement = document.getElementById("userIcon");
+    const logoutIconElement = document.getElementById("logoutIcon"); // NEW
+
+    if (loggedInUser) {
+        // If logged in: Hide Login Text, Show User Icon, Show Logout Icon
+        if (loginTextElement) {
+            loginTextElement.style.display = 'none';
+        }
+        if (userIconElement) {
+            userIconElement.style.display = 'block';
+        }
+        if (logoutIconElement) { // NEW: Show logout icon
+            logoutIconElement.style.display = 'block';
+        }
+    } else {
+        // If logged out (or not logged in): Show Login Text, Hide Icons
+        if (loginTextElement) {
+            loginTextElement.style.display = 'block';
+        }
+        if (userIconElement) {
+            userIconElement.style.display = 'none';
+        }
+        if (logoutIconElement) { // NEW: Hide logout icon
+            logoutIconElement.style.display = 'none';
+        }
+    }
+}
+
+// 3. Define the Logout Function (NEW FUNCTION)
+function userLogout() {
+    // 1. Remove the logged-in user data
+    localStorage.removeItem("loggedInUser");
+    
+    // 2. Update the UI immediately without reloading
+    updateHeaderAuthUI();
+
+    // OPTIONAL: Reload the page to ensure all components are reset
+    // window.location.reload(); 
+    // OR: Redirect to the home page if you want to clear the URL history
+    // window.location.href = "index.html"; 
+    
+    alert("Logged out successfully!");
+}
+
+
+// Run the UI update when the page finishes loading
+document.addEventListener('DOMContentLoaded', () => {
+    updateHeaderAuthUI();
+    
+    // Add event listener for the new logout function
+    const logoutBtn = document.getElementById("logoutIcon");
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', userLogout);
+    }
+});
