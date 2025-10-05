@@ -77,3 +77,21 @@ function showProduct(result) {
 
 // Call the product fetching function when the page loads
 getProducts();
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const sellLink = document.getElementById("sellLink");
+
+  if (sellLink) {
+    sellLink.addEventListener("click", (event) => {
+      const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+      // Agar login nahi hai
+      if (!loggedInUser) {
+        event.preventDefault(); // stop the normal link
+        alert("⚠️ Please login first to post your ad.");
+        window.location.href = "login2.html"; // redirect to login page
+      }
+    });
+  }
+});

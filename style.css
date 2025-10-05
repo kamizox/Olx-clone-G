@@ -67,7 +67,8 @@ body {
   display: none;
 }
 .mainImage  {
-    width: 1300px;
+    width: 1200;
+    max-width: 1300px;
     height: auto;
     margin-top: 20px;
     padding-left: 40px;
